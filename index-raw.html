@@ -32,7 +32,6 @@
       button {
         background: none;
         border: none;
-        margin: 0 2px;
       }
 
       ul {
@@ -116,21 +115,18 @@
 
     const currencies = {
       usd: {
-        entity: "&#36;",
         symbol: "$",
         key: "USD"
       },
       gbp: {
-        entity: "&pound;",
         symbol: "£",
         key: "GBP",
       },
       eur: {
-        entity: "&euro;",
         symbol: "€",
         key: "EUR",
       },
-    };
+    }
 
     const currencyParam = urlParams.get("currency");
     const currency = currencies[currencyParam] ?? currencies["usd"];
@@ -139,7 +135,7 @@
     const refreshRate = refreshRateParam >= 1000 ? refreshRateParam : 5000;
 
     const priceCallbacks = [
-      price => document.getElementById("price").innerHTML = `${currency.entity}${price}`, 
+      price => document.getElementById("price").textContent = `${currency.symbol}${price}`, 
       price => document.title = `1BTC = ${currency.symbol}${price}`
     ];
 
