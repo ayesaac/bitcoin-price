@@ -32,6 +32,7 @@
       button {
         background: none;
         border: none;
+        margin: 0 2px;
       }
 
       ul {
@@ -129,7 +130,7 @@
         symbol: "€",
         key: "EUR",
       },
-    }
+    };
 
     const currencyParam = urlParams.get("currency");
     const currency = currencies[currencyParam] ?? currencies["usd"];
